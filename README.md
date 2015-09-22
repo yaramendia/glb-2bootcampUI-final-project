@@ -1,4 +1,4 @@
-# Globant :: 2nd BOOTCAMP - MDQ
+# Globant - 2nd BOOTCAMP - MDQ
 
 ## Final Project: Twitter Based App
 
@@ -25,7 +25,7 @@ Tablet | iPad / Samsung Galaxy Note
 Phone  | iPhone 4 - 5 / Android 4.4.2 +
 
 
-####App Support
+####Evaluation
 
 * Markup and Styling
 * Code styling and best practices
