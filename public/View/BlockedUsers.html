@@ -1,0 +1,13 @@
+<div>
+<div>
+  <ul>
+  	<li><a href="#/">Home</a></li>
+  	<li><a href="#/blockedUsers">Blocked Users</a></li>
+    <li><a href="#/trends">Trends</a></li>
+  </ul>
+<div>
+<div ng-repeat="user in blockedList">
+	<label>{{user}}</label> 
+	<button ng-click="releaseUser($index)">Desbloquear</button>
+</div>
+</div>

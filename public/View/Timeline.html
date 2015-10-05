@@ -1,0 +1,20 @@
+<div>
+  <ul>
+  	<li><a href="#/">Home</a></li>
+  	<li><a href="#/blockedUsers">Blocked Users</a></li>
+    <li><a href="#/trends">Trends</a></li>
+  </ul>
+<div>
+<div class="tweet" ng-repeat="tweet in tweetList">
+	<div class="row">
+		<div class="separador" ng-click="goToDetails($index)">
+			<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
+			<label class="textBold">{{tweet.user.name}}</label>
+			<label class="textGrey">@{{tweet.user.screen_name}}</label>
+			<p>{{tweet.text}}</p>
+		</div>
+	<button ng-click="blockUser(tweet.user.screen_name)">Block</button>
+	</div>
+</div>
+
+

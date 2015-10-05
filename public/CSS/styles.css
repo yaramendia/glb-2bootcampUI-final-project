@@ -1,0 +1,26 @@
+.container{
+	float:right;
+	margin-top:1%;
+}
+
+.photo{
+	margin:1%;
+}
+
+.textBold{
+	font-weight: bold;
+}
+
+.textGrey{
+	color: #A4A4A4;
+	font-weight: normal;
+}
+
+.separador{
+	border-bottom:1px;
+	border-bottom-style: solid; 
+}
+
+.tweet{
+	margin-left:1%;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "TwitterAPP",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yaramendia/glb-2bootcampUI-final-project",
+  "authors": [
+    "Yamila Aramendia <yami_dreamer@hotmail.com>"
+  ],
+  "description": "Final Project",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.0"
+  }
+}

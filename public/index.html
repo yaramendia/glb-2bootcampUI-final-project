@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+	 <title>Twitter</title>
+	 <meta name="viewport" content="width=device-width,initial-scale=1">
+	<!--bootstrap and styles-->
+	 <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body ng-app="TwitterApp">
+	<ng-view></ng-view>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/ngStorage/ngStorage.js" type="text/javascript"></script>
+<script src="./routes.js" type="text/javascript"></script>
+
+<!--Services-->
+<script src="./Services/BlockedUserService.js" type="text/javascript"></script>
+<script src="./Services/TempService.js" type="text/javascript"></script>
+<script src="./Services/TwitterAPIService.js" type="text/javascript"></script>
+
+<!--Controllers-->
+<script src="./Controllers/BlockedUsersController.js" type="text/javascript"></script>
+<script src="./Controllers/DetailsController.js" type="text/javascript"></script>
+<script src="./Controllers/TimeLineController.js" type="text/javascript"></script>
+<script src="./Controllers/TrendsController.js" type="text/javascript"></script>
+<script src="./Controllers/TrendsTweetsController.js" type="text/javascript"></script>
+
+</body>
+</html>

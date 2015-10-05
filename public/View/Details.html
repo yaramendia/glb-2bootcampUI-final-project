@@ -1,0 +1,18 @@
+<div>
+  <ul>
+  	<li><a href="#/">Home</a></li>
+  	<li><a href="#/blockedUsers">Blocked Users</a></li>
+    <li><a href="#/trends">Trends</a></li>
+  </ul>
+<div>
+
+<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
+
+<label class="textBold">{{tweet.user.name}}</label>
+<label class="textGrey">@{{tweet.user.screen_name}}</label>
+
+<p>{{tweet.text}}</p>
+<label>{{tweet.created_at | date : format : medium }}</label><!--como truncar fecha ver-->
+
+<label>{{tweet.retweet_count}} RETWEETS</label>
+<label>{{tweet.favorite_count}} FAVORITES </label>
