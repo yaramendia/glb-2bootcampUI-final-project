@@ -27,7 +27,7 @@ app.config(['$routeProvider',function ($routeProvider) {
 		templateUrl: 'View/Timeline.html',
 		controller: 'TrendsTweetsController'
 	})
-	
+
 	.otherwise({redirectTo: '/'});
 
 }]);

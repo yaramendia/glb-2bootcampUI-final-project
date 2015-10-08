@@ -37,5 +37,4 @@ app.controller('TrendsController',['$scope','TwitterAPI',function($scope,Twitter
 	}
 
 	getLocation();
-
 }]);

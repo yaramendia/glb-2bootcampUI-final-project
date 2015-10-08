@@ -33,6 +33,12 @@ app.controller('TimelineController',['SaveTweet','$scope','TwitterAPI','BlockedU
 		$scope.getTimeline();
 	}
 	
-	$scope.getTimeline();
+	$scope.isRT=function(tweet) {
+		if (tweet!=null)
+			return true;
+		else
+			return false;
+	}
 
+	$scope.getTimeline();
 }]);

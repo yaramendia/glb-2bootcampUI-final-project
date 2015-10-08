@@ -1,13 +1,9 @@
-<div>
-  <ul>
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/blockedUsers">Blocked Users</a></li>
-    <li><a href="#/trends">Trends</a></li>
-  </ul>
-<div>
-
-<div ng-repeat="trend in trendsList">
-  <div>
-	   <a ng-href="#/trends/trendtweets/{{trend.query}}">{{trend.name}}</a>
+<div class="container">
+  <div class="separador_trends" ng-repeat="trend in trendsList">
+    <div>
+	    <a ng-href="#/trends/trendtweets/{{trend.query}}">{{trend.name}}
+      <img class="imgBlock" src="./Img/symbol.png"></img>
+      </a>
+    </div>
   </div>
 </div>

@@ -1,11 +1,88 @@
+body{
+	font-family: Helvetica ;
+	width: 100%;
+	height: 90%;
+}
+
+/*Banner & NavigationBar*/
+
+.banner{
+	background-color: #5882FA;
+	position: fixed;
+	width: 100%;
+	top:0;
+	left: 0;
+	right: 0;
+	height: 5%;
+	font-weight: bold;
+	color:#FFFFFF;
+}
+
+.banner_pic{
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+
+.navigator{
+	width: 100%;
+	top: 5%;
+	left: 0;
+	right:0;
+	height: 5%;
+	position:fixed;
+	background-color: #424242;
+	display:block;
+}
+
+.item_navigator{
+	display: inline-block;
+	text-align: center;
+	width: 33%;
+	height: 90%;
+}
+
+.item_navigator_selected{
+	background-color: #819FF7;
+	border-radius:5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.img_navigator{
+	display: block;
+	height: 50%;
+	margin: 0 auto;
+}
+
+a:link{
+	text-decoration:none;
+	color:#000000;
+}
+
+a:visited{
+	color:#000000;
+}
+
+
+
+/*Tweet Contents*/
 .container{
-	float:right;
-	margin-top:1%;
+	margin-top: 100px;
 }
 
 .photo{
 	margin:1%;
+	vertical-align: text-top;
+	float:left;
 }
+
+.div_photo{
+	height: 100%;
+}
+
 
 .textBold{
 	font-weight: bold;
@@ -16,11 +93,105 @@
 	font-weight: normal;
 }
 
-.separador{
-	border-bottom:1px;
-	border-bottom-style: solid; 
+.textGreyDetails{
+	display: inherit;
 }
 
+.textTweet{
+	/*text-align : justify;*/
+}
+
+.textTweet_details{
+	display: inline-block;
+}
+
+
 .tweet{
-	margin-left:1%;
+	display:block;
+	width: 98%;
+	margin: 0 auto;
+}
+
+.tweet_details{
+	clear:left;
+}
+
+.userBlock{
+	clear:left;
+	height: 5%;
+}
+
+.goRight{
+	float:right;
+}
+
+.bt_blockUser{
+	float:right;
+	margin-top:1%;
+}
+
+
+.imgBlock{
+	width: 2%;
+	float: right;
+}
+
+.img_retweeted{
+	height: 2%;
+	width: 2%;
+	float:left;
+	vertical-align: middle;
+}
+
+.retweet{
+	margin-left:5%;
+	margin-top: 1%;
+}
+
+.date{
+	margin-bottom:2%;
+	color:#A4A4A4;
+}
+
+.numBold{
+	font-weight: bold;
+	color:#6E6E6E;
+}
+
+
+.separadorBloqueados{
+	padding-top: 1%;
+    padding-bottom: 1%;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    clear: left;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.separador_trends{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-bottom:1px;
+	border-bottom-style: solid;
+	clear:left;
+	width: 95%;
+    margin: 0 auto;
+}
+
+.separator_details{
+	border-bottom:1px;
+	border-top:1px;
+	border-top-style: solid;
+	border-bottom-style: solid;	
+	padding: 1%;
+	padding-left: 5%;
+	color:#A4A4A4;
+}
+
+.separador{
+	border-bottom:1px;
+	border-bottom-style: solid;
+	clear:left;
+	padding-top: 1%;
 }

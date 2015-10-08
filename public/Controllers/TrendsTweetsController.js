@@ -13,9 +13,17 @@ app.controller('TrendsTweetsController',['$scope','TwitterAPI','$routeParams','S
 		})
 	}
 
+	$scope.isRT=function(tweet) {
+		if (tweet!=null)
+			return true;
+		else
+			return false;
+	}
+
 	$scope.goToDetails = function(index) {
 		SaveTweet.goTo('/details', $scope.tweetList[index]);
 	};
+	
 	//maybe change the way that we set the param for the query 
 	$scope.getTrendTweets(encodeURIComponent($routeParams.name));
 

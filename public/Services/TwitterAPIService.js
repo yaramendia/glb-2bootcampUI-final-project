@@ -1,4 +1,4 @@
-var app=angular.module('TwitterAPIService',['ngStorage']);
+var app=angular.module('TwitterAPIService',[]);
 
 app.service('TwitterAPI',['$http','$q',function($http,$q){
 	return {

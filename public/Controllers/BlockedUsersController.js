@@ -8,13 +8,11 @@ app.controller('BlockedUsersController',['$scope','BlockedUserService' ,function
 
 	$scope.blockUser=function(user){
 		$scope.blockedList=BlockedUserService.addBlockedUser(user);
-		//$scope.searchUsersBlocked();
 	}
 
 	$scope.releaseUser=function(index){
 		$scope.blockedList=BlockedUserService.removeBlockedUser(index);
 	}
 
-	$scope.searchUsersBlocked();
-	
+	$scope.searchUsersBlocked();	
 }]);

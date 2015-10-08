@@ -1,20 +1,22 @@
-<div>
-  <ul>
-  	<li><a href="#/">Home</a></li>
-  	<li><a href="#/blockedUsers">Blocked Users</a></li>
-    <li><a href="#/trends">Trends</a></li>
-  </ul>
-<div>
-<div class="tweet" ng-repeat="tweet in tweetList">
-	<div class="row">
-		<div class="separador" ng-click="goToDetails($index)">
-			<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
-			<label class="textBold">{{tweet.user.name}}</label>
-			<label class="textGrey">@{{tweet.user.screen_name}}</label>
-			<p>{{tweet.text}}</p>
+<div class="container">
+		<div class="tweet" ng-repeat="tweet in tweetList">
+			<div class="row">
+				<button class="bt_blockUser" ng-click="blockUser(tweet.user.screen_name)">Block User</button>
+				<div class="retweet" ng-if="isRT(tweet.retweeted_status)">
+					<label class="textGrey"><img class="img_retweeted" src="./Img/retweeted.png"></img>{{tweet.retweeted_status.user.name}} retweeted</label>
+				</div>
+				<div class="separador" ng-click="goToDetails($index)">
+					<div class="div_photo">
+						<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
+					</div>
+					<label class="textBold">{{tweet.user.name}}</label>
+					<label class="textGrey">@{{tweet.user.screen_name}}</label>
+					<p class="textTweet">{{tweet.retweeted_status.text}}</p>			
+					<div ng-if="!isRT(tweet.retweeted_status)">
+						<p class="textTweet">{{tweet.text}}</p>
+					</div>
+				</div>
+			</div>
 		</div>
-	<button ng-click="blockUser(tweet.user.screen_name)">Block</button>
 	</div>
 </div>
-
-

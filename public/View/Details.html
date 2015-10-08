@@ -1,18 +1,23 @@
-<div>
-  <ul>
-  	<li><a href="#/">Home</a></li>
-  	<li><a href="#/blockedUsers">Blocked Users</a></li>
-    <li><a href="#/trends">Trends</a></li>
-  </ul>
-<div>
-
-<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
-
-<label class="textBold">{{tweet.user.name}}</label>
-<label class="textGrey">@{{tweet.user.screen_name}}</label>
-
-<p>{{tweet.text}}</p>
-<label>{{tweet.created_at | date : format : medium }}</label><!--como truncar fecha ver-->
-
-<label>{{tweet.retweet_count}} RETWEETS</label>
-<label>{{tweet.favorite_count}} FAVORITES </label>
+<div class="container">
+	<div>
+		<div class="retweet" ng-if="isRT(tweet.retweeted_status)">
+			<label class="textGrey"><img class="img_retweeted" src="./Img/retweeted.png"></img>{{tweet.retweeted_status.user.name}} retweeted</label>
+		</div>
+		<div class="tweet_details">
+			<div class="div_photo">
+				<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
+			</div>
+			<label class="textBold">{{tweet.user.name}}</label>
+			<label class="textGrey textGreyDetails">@{{tweet.user.screen_name}}</label>
+			<p class="textTweet textTweet_details">{{tweet.retweeted_status.text}}</p>			
+			<div ng-if="!isRT(tweet.retweeted_status)">
+				<p class="textTweet textTweet_details">{{tweet.text}}</p>
+			</div>
+		</div>
+			<div class="date">{{ dateModify | date:'h:mm a - d MMM y'}}</div>
+			<div class="separator_details">
+				<label class="numBold">{{tweet.retweet_count}}</label><label> RETWEETS</label>
+				<label class="numBold">{{tweet.favorite_count}}</label><label> FAVORITES</label>
+			</div>
+	</div>
+</div>

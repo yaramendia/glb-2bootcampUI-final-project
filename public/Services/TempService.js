@@ -1,7 +1,6 @@
-var app=angular.module('TempService',['ngStorage']);
+var app=angular.module('TempService',[]);
 
 //SAVE TWEET
-
 app.value("tempStorage", {});
 
 app.service('SaveTweet',['tempStorage','$location',function (tempStorage,$location) {

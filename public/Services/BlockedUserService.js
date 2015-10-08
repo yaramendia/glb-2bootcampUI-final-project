@@ -31,12 +31,4 @@ app.service('BlockedUserService',['$localStorage',function($localStorage){
 		localStorage.setItem(pos,user);
 		}	
 	}
-
-	/*this.searchUserBlocked=function(user){
-		var flag=new Boolean(false);
-		for (var i=0; i<localStorage.length;i++)
-			if (localStorage[i] == user)
-				flag=true;
-		return flag;
-	}*/
 }]);

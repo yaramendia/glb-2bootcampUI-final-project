@@ -1,13 +1,10 @@
-<div>
-<div>
-  <ul>
-  	<li><a href="#/">Home</a></li>
-  	<li><a href="#/blockedUsers">Blocked Users</a></li>
-    <li><a href="#/trends">Trends</a></li>
-  </ul>
-<div>
-<div ng-repeat="user in blockedList">
-	<label>{{user}}</label> 
-	<button ng-click="releaseUser($index)">Desbloquear</button>
+<div class="container">
+  <div ng-repeat="user in blockedList">
+      <!--agregar input text-->
+      <div class="separadorBloqueados">
+	    <span class="userBlock">@{{user}}</span> 
+	    <img class="imgBlock" src="./Img/unlock.png" ng-click="releaseUser($index)"></img>
+    </div>
+  </div>
 </div>
 </div>
