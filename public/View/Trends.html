@@ -1,9 +1,12 @@
 <div class="container">
-  <div class="separador_trends" ng-repeat="trend in trendsList">
+  <div class="trends" ng-repeat="trend in trendsList">
     <div>
-	    <a ng-href="#/trends/trendtweets/{{trend.query}}">{{trend.name}}
-      <img class="imgBlock" src="./Img/symbol.png"></img>
-      </a>
+	      <a class="textTrend" ng-href="#/trends/trendtweets/{{trend.query}}">{{trend.name}}
+        <i class="goRight fa fa-angle-right"></i></a>
+        <div ng-if="isPromoted(trend.promoted_content)">
+			     <img class="promoted" src="./Img/promoted.png"></img>
+           <label class="textGrey"> Promoted</label>
+        </div>
     </div>
   </div>
 </div>

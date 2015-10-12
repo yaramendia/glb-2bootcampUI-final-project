@@ -1,4 +1,4 @@
-var app=angular.module('TrendsController',['TwitterAPIService']);
+var app=angular.module('TrendsController',['TwitterAPIService','MenuController']);
 
 app.controller('TrendsController',['$scope','TwitterAPI',function($scope,TwitterAPI){
 
@@ -21,7 +21,7 @@ app.controller('TrendsController',['$scope','TwitterAPI',function($scope,Twitter
 			$scope.getTrends(data[0].parentid);
 		})
 		.catch(function(err){
-
+			alert(err);
 		})
 	}
 
@@ -32,8 +32,15 @@ app.controller('TrendsController',['$scope','TwitterAPI',function($scope,Twitter
 			$scope.trendsList=data;
 		})
 		.catch(function(err){
-
+			alert(err);
 		})
+	}
+
+	$scope.isPromoted=function(trend) {
+		if (trend!=null)
+			return true;
+		else
+			return false;
 	}
 
 	getLocation();

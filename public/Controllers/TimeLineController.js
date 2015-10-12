@@ -1,4 +1,4 @@
-var app=angular.module('TimeLineController',['TwitterAPIService','BlockedUserService']);
+var app=angular.module('TimeLineController',['TwitterAPIService','BlockedUserService','MenuController','angularMoment']);
 
 app.controller('TimelineController',['SaveTweet','$scope','TwitterAPI','BlockedUserService',
 	function(SaveTweet,$scope,TwitterAPI,BlockedUserService){	
@@ -17,21 +17,16 @@ app.controller('TimelineController',['SaveTweet','$scope','TwitterAPI','BlockedU
 		TwitterAPI
 		._getTimeline()
 		.then(function(data){
-				$scope.tweetList=data.filter(filterBlockedUsers);	
+				$scope.tweetList=data.filter(filterBlockedUsers);
 			})
 		.catch(function(err){
-
+			alert(err);
 		})
 	};
 
 	$scope.goToDetails = function(index) {
 		SaveTweet.goTo('/details', $scope.tweetList[index]);
 	};
-
-	$scope.blockUser=function(user){
-		$scope.blockedList=BlockedUserService.addBlockedUser(user);
-		$scope.getTimeline();
-	}
 	
 	$scope.isRT=function(tweet) {
 		if (tweet!=null)

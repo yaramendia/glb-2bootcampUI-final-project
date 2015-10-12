@@ -4,39 +4,49 @@
 	 <meta charset="UTF-8">
 	 <title>Twitter</title>
 	 <meta name="viewport" content="width=device-width,initial-scale=1">
-	<!--bootstrap and styles-->
+	<!--awesome and styles-->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="./CSS/animate.css">
 	 <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body ng-app="TwitterApp">
+	<div ng-controller="NavController">
 	<header class="banner"> 
-		<img class="banner_pic" src="./Img/banner.png">Home</img>
+		<i class="iconBanner fa fa-twitter"></i><label>Twitter</label>
 	</header>
-	<div class="navigator"> <!--aca deberia ser una lista y hacer lo del active, ver si cambio las imagenes por iconos del fontawesome-->
-  		<div class="item_navigator">
-			<a href="#/"> 
-  			<img class="img_navigator" src="./Img/home.png">Home</img></a>
-  		</div>
-		<div class="item_navigator">
-	  		<a href="#/blockedUsers">
-  			<img class="img_navigator" src="./Img/blockedUsers.png">Blocked Users</img></a>
-  		</div>
-  		<div class="item_navigator">
-			<a href="#/trends">
-    		<img class="img_navigator" src="./Img/hashtag.png">Trends</img></a>
-    	</div>
+	<nav>
+		<div class="navigator" > 
+  			<div class="item_navigator" ng-class="{item_navigator_selected : isActive('/')}">
+				<a class="navText" href="#/"><i class="iconNav fa fa-home "></i>Home</a>
+  			</div>
+			<div class="item_navigator" ng-class="{item_navigator_selected : isActive('/blockedUsers')}">
+	  			<a class="navText" href="#/blockedUsers"><i class="iconNav fa fa-cog "></i>Blocked Users</a>
+  			</div>
+  			<div class="item_navigator" ng-class="{item_navigator_selected : isActive('/trends')}">
+				<a class="navText" href="#/trends">
+    			<img class="img_navigator" src="./Img/hashtag.png">Trends</img></a>
+    		</div>
+		</div>
+	</nav>
 	</div>
-	<ng-view></ng-view>
+	<section>
+		<ng-view></ng-view>
+	</section>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/ngStorage/ngStorage.js" type="text/javascript"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/angular-moment/angular-moment.min.js" type="text/javascript"></script>
 <script src="./routes.js" type="text/javascript"></script>
-<script src="./jquery-2.1.4.js" type="text/javascript"></script>
+
 
 <!--Services-->
 <script src="./Services/BlockedUserService.js" type="text/javascript"></script>
 <script src="./Services/TempService.js" type="text/javascript"></script>
+<script src="./Services/LinksService.js" type="text/javascript"></script>
 <script src="./Services/TwitterAPIService.js" type="text/javascript"></script>
+
 
 <!--Controllers-->
 <script src="./Controllers/NavController.js" type="text/javascript"></script>

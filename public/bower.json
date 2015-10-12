@@ -1,5 +1,5 @@
 {
-  "name": "TwitterAPP",
+  "name": "Twitter APP",
   "version": "0.0.0",
   "homepage": "https://github.com/yaramendia/glb-2bootcampUI-final-project",
   "authors": [
@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "~1.4.0"
+    "angular-route": "~1.4.0",
+    "angular-moment": "1.0.0-beta.2"
   }
 }

@@ -1,10 +1,12 @@
 <div class="container">
-  <div ng-repeat="user in blockedList">
-      <!--agregar input text-->
-      <div class="separadorBloqueados">
-	    <span class="userBlock">@{{user}}</span> 
-	    <img class="imgBlock" src="./Img/unlock.png" ng-click="releaseUser($index)"></img>
-    </div>
-  </div>
-</div>
+	<div class="alert animated fadeOutUp" ng-show="alertAdd">User Blocked</div>
+	<div class="alert animated fadeOutUp" ng-show="alertRemove">Remove User Blocked</div>
+	<input type="text" id="bt_Add" class="txtBlock" ng-model="block.text"/>
+    <button ng-click="blockUser(block.text)"><i class="fa fa-twitter"></i> +</button>
+    <div ng-repeat="user in blockedList">
+      	<div class="userBlocked">
+	    	<span class="userBlock">@{{user}}</span> 
+	    	<i class="goRight fa fa-trash" ng-click="releaseUser($index)"></i>
+    	</div>
+  	</div>
 </div>

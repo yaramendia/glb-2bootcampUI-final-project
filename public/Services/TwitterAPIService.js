@@ -1,6 +1,6 @@
-var app=angular.module('TwitterAPIService',[]);
+var app=angular.module('TwitterAPIService',['LinksService']);
 
-app.service('TwitterAPI',['$http','$q',function($http,$q){
+app.service('TwitterAPI',['$http','$q','ConvertLinks',function($http,$q,ConvertLinks){
 	return {
 		_getTimeline: _getTimeline,
 		_getTrends:_getTrends,
@@ -14,10 +14,19 @@ app.service('TwitterAPI',['$http','$q',function($http,$q){
 		var promise= defered.promise;
 		$http.get('http://localhost:3000/timeline?count=100')
 		.success(function(data){
+				var tw = data;
+				angular.forEach(tw,function(tweet){
+					if(tweet.retweeted_status){
+						tweet.retweeted_status = ConvertLinks._convertLinks(tweet.retweeted_status);
+					}
+					else{
+						tweet=ConvertLinks._convertLinks(tweet);
+					}
+				});
 			defered.resolve(data);
 		})
 		.error(function(err){
-			defered.reject(err)
+			defered.reject("API Error - TimeLine")
 		});
 		return promise;
 	}
@@ -30,7 +39,7 @@ app.service('TwitterAPI',['$http','$q',function($http,$q){
 			defered.resolve(data);
 		})
 		.error(function(err){
-			defered.reject(err)
+			defered.reject("API Error - Geolocation")
 		});
 		return promise;
 	}
@@ -43,7 +52,7 @@ app.service('TwitterAPI',['$http','$q',function($http,$q){
 			defered.resolve(data[0].trends);
 		})
 		.error(function(err){
-			defered.reject(err)
+			defered.reject("API Error - Trends")
 		});
 		return promise;
 	}
@@ -53,10 +62,19 @@ app.service('TwitterAPI',['$http','$q',function($http,$q){
 		var promise= defered.promise;
 		$http.get('http://localhost:3000/search?q='+trend)
 		.success(function(data){
+				var tw = data.statuses;
+				angular.forEach(tw,function(tweet){
+					if(tweet.retweeted_status){
+						tweet.retweeted_status = ConvertLinks._convertLinks(tweet.retweeted_status);
+					}
+					else{
+						tweet=ConvertLinks._convertLinks(tweet);
+					}
+				});
 			defered.resolve(data);
 		})
 		.error(function(err){
-			defered.reject(err)
+			defered.reject("API Error - Trends")
 		});
 		return promise;
 	}

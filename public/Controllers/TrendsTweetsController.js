@@ -1,6 +1,7 @@
 var app=angular.module('TrendsTweetsController',['TwitterAPIService','TempService']);
 
-app.controller('TrendsTweetsController',['$scope','TwitterAPI','$routeParams','SaveTweet',function($scope,TwitterAPI,$routeParams,SaveTweet){
+app.controller('TrendsTweetsController',['$scope','TwitterAPI','$routeParams','SaveTweet',
+	function($scope,TwitterAPI,$routeParams,SaveTweet){
 	
 	$scope.getTrendTweets=function(name){
 		TwitterAPI
