@@ -1,19 +1,19 @@
 <div class="container">
 	<div class="tweet" ng-repeat="tweet in tweetList">
-			<div class="retweet" ng-if="isRT(tweet.retweeted_status)" >
-				<label class="textGrey"><img class="img_retweeted" src="./Img/retweeted.png"></img> {{tweet.retweeted_status.user.name}} retweeted</label>
-			</div>
-			<div class="div_photo">
-				<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
-			</div>
-			<label class="timeago" am-time-ago="tweet.created_at | amParse:'dd MMM DD HH:mm:ss ZZ YYYY'"></label>
-			<div ng-click="goToDetails($index)">
-				<label class="textBold">{{tweet.user.name}}</label>
-				<label class="textGrey">@{{tweet.user.screen_name}}</label>
-			</div>
-			<p class="textTweet"  ng-bind-html="tweet.retweeted_status.text  | convertLinks"></p>			
-			<div  ng-if="!isRT(tweet.retweeted_status)">
-				<p class="textTweet" ng-bind-html="tweet.text | convertLinks"></p>
-			</div>
+		<div class="retweet" ng-if="isRT(tweet.retweeted_status)" >
+			<label class="textGrey"><img class="img_retweeted" src="./Img/retweeted.png"></img> {{tweet.retweeted_status.user.name}} retweeted</label>
+		</div>
+		<div class="div_photo">
+			<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
+		</div>
+		<label class="timeago" am-time-ago="tweet.created_at | amParse:'dd MMM DD HH:mm:ss ZZ YYYY'"></label>
+		<div ng-click="goToDetails($index)">
+			<label class="textBold">{{tweet.user.name}}</label>
+			<label class="textGrey">@{{tweet.user.screen_name}}</label>
+		</div>
+		<p class="textTweet"  ng-bind-html="tweet.retweeted_status.text  | convertLinks"></p>			
+		<div  ng-if="!isRT(tweet.retweeted_status)">
+			<p class="textTweet" ng-bind-html="tweet.text | convertLinks"></p>
+		</div>
 	</div>
 </div>
