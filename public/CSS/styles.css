@@ -244,6 +244,11 @@ a.links:link, a.links:visited{
 	border-radius: 5px;
 }
 
+.bt_details{
+	height: 15px;
+    font-size: xx-small;
+    float: right;
+}
 
 /*MOBILE - IPHONE 5*/
 @media (min-width: 320px) {
@@ -333,6 +338,7 @@ a.links:link, a.links:visited{
 	.iconBanner{
 		font-size: x-large;
 	}
+
 }
 
 /*TABLET - APPLE IPAD*/
@@ -428,6 +434,11 @@ a.links:link, a.links:visited{
 
 	.iconBanner{
 		font-size: xx-large;
+	}
+
+	.bt_details {
+		height: 30px;
+    	font-size: small;
 	}
 }
 

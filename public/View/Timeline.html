@@ -6,11 +6,10 @@
 		<div class="div_photo">
 			<img class="photo" ng-src={{tweet.user.profile_image_url}}></img>
 		</div>
+		<button class="bt_details" ng-click="goToDetails($index)">...</button>
 		<label class="timeago" am-time-ago="tweet.created_at | amParse:'dd MMM DD HH:mm:ss ZZ YYYY'"></label>
-		<div ng-click="goToDetails($index)">
-			<label class="textBold">{{tweet.user.name}}</label>
-			<label class="textGrey">@{{tweet.user.screen_name}}</label>
-		</div>
+		<label class="textBold">{{tweet.user.name}}</label>
+		<label class="textGrey">@{{tweet.user.screen_name}}</label>
 		<p class="textTweet"  ng-bind-html="tweet.retweeted_status.text  | convertLinks"></p>			
 		<div  ng-if="!isRT(tweet.retweeted_status)">
 			<p class="textTweet" ng-bind-html="tweet.text | convertLinks"></p>
